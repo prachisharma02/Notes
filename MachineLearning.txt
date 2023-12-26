@@ -442,6 +442,94 @@ Multiple Linear Regression
 	Discrete output function(y) is mapped to input variable(x).
 	y=f(x), where y = categorical output  
 	The main goal is to identify the category of a given dataset
+
+
+	2 Learners in Classification Problems:
+Lazy Learners: 
+•	It firstly stores the training dataset and wait until it receives the test dataset.     
+•	classification is done on the basis of the most related data stored in the training dataset. 
+•	It takes less time in training but more time for predictions. Ex: K-NN algorithm
+Eager Learners :
+•	Eager Learners develop a classification model based on a training dataset before receiving a test dataset. 
+•	Opposite to Lazy learners, Eager Learner takes more time in learning, and less time in prediction. 
+•	Example: Decision Trees, Naïve Bayes, ANN.
+
+3.3 Logistic Regression
+•	Logistic regression predicts the output of a categorical dependent variable.
+•	It doesn’t give exact value as 0 and 1, it gives the probabilistic values which lie between 0 and 1.
+•	instead of fitting a regression line, we fit an "S" shaped logistic function, which predicts two maximum values (0 or 1).
+•	It has the ability to provide probabilities and classify new data using continuous and discrete datasets.
+
+
+
+
+
+
+3.4 Sigmoid Function
+•	The sigmoid function is a mathematical function used to map the predicted values to probabilities.
+•	It maps any real value into another value within a range of 0 and 1.
+•	The value of the logistic regression must be between 0 and 1, which cannot go beyond this limit, so it forms a curve like the "S" form. The S-form curve is called the Sigmoid function or the logistic function.
+•	In logistic regression, we use the concept of the threshold value, which defines the probability of either 0 or 1. Such as values above the threshold value tends to 1, and a value below the threshold values tends to 0
+•	equation of the straight line
+ 
+
+•	y can be between 0 and 1 only, so for this let's divide the above equation by (1-y):
+ 
+•	But we need range between -[infinity] to +[infinity], then take logarithm of the equation it will become:
+
+ 
+
+
+
+
+4.1 Confusion Matrix
+•	The confusion matrix is a matrix used to determine the performance of the classification models for a given set of test data. 
+•	It can only be determined if the true values for test data are known.
+•	For  2 prediction class the matrix is of 2*2 table, for 3 classes, it is 3*3 table
+•	The matrix is divided into two dimensions, that are predicted values and actual values along with the total number of predictions.
+•	Predicted values are  values, predicted by the model, and actual values are the true values for the given observations.
+
+
+•	Need for Confusion Matrix 
+	It evaluates the performance of the classification models, when they make predictions on test data, and tells how good our classification model is.
+	It not only tells the error made by the classifiers but also the type of errors such as it is either type-I or type-II error.
+	With the help of the confusion matrix, we can calculate the different parameters for the model, such as accuracy, precision
+•	True Negative: Model has given prediction No, and the real or actual value was also No.
+•	True Positive: The model has predicted yes, and the actual value was also true.
+•	False Negative: The model has predicted no, but the actual value was Yes, also called a Type-II error.
+•	False Positive: The model has predicted Yes, but the actual value was No. also called a Type-I error.
+•	Accuracy: Accuracy is a measure of how many correctly predicted instances there are out of the total instances. It's the most basic measure of a model's performance and is calculated as
+o	Accuracy= Total Number of Predictions/Number of Correct Predictions
+
+o	 
+•	Precision measures the fraction of true positive predictions among all positive predictions. 
+o	It's used when you want to minimize false positives.
+o	Precision=True Positives/True Positives + False Positives
+•	Recall (or Sensitivity) measures the fraction of true positive predictions among all actual positives. It's used when you want to minimize false negatives.
+o	Recall = True Positives/True Positives +False Negatives
+•	F1-Score: The F1-Score is the harmonic mean of precision and recall. 
+o	It provides a balance between the two metrics and is useful when you want to find a good compromise between precision and recall.
+o	F1-Score= 2⋅Precision⋅Recall/ Precision+Recall
+
+	https://www.javatpoint.com/bias-and-variance-in-machine-learning
+
+•	Bias:
+•	Bias is a prediction error that is introduced in the model due to oversimplifying the machine learning algorithms. 
+•	the difference between the predicted values and the actual values.
+•	While making predictions, a difference occurs between prediction values made by the model and actual values/expected values, and this difference is known as bias errors 
+•	Low Bias Models: Low bias models are flexible and make fewer assumptions about the data.
+•	They have the capacity to capture complex patterns.
+•	Overfitting Risk: When a model is very flexible (low bias), it can fit the training data extremely closely, even to the extent of capturing random fluctuations or noise in the data.
+•	Capturing Noise: This means that the model doesn't just learn the meaningful patterns but also learns the irregularities and randomness present in the training data. 
+•	It tries to explain every data point, even if some of them are just due to chance.
+
+•	Variance: 
+•	If the machine learning model performs well with the training dataset, but does not perform well with the test dataset, then variance occurs.
+•	variance tells that how much a random variable is different from its expected value
+•	Low variance means there is a small variation in the prediction of the target function with changes in the training data set.
+•	 High variance shows a large variation in the prediction of the target function with changes in the training dataset.
+•	A model that shows high variance learns a lot and perform well with the training dataset, and does not generalize well with the unseen dataset. As a result, such a model gives good results with the training dataset but shows high error rates on the test dataset.
+
 	
                                       
 	
