@@ -1,5 +1,196 @@
 Machine learning
 
+
+Important Terms
+NP : Non polynomial whose time complexity grows exponentially is used as np problem mostly it is seen in uninformed search where we do not have knowledge of the domain and we define all the states where np problem occurs like ex 8 puzzle problem   Worst case complexity of 8 puzzle problem is b^d which is  3^20 and in 15 puzzle its 10^13 this is what np is
+Heuristic :Technique designed to solve a problem This mostly reduces the time complexity by converting np to p and thus reduces the time complexity. For example, we look at the depth first search,me We see whose cost is less and we go deeper into that side. The other side we don’t go this is what the heuristic used in informed search which gives us optimal values. cost is called as heuristic value
+UNIT-1
+1.1	State Space Search 
+•	No of states in which a problem can go
+•	 efn
+•	It is a problem-solving technique used in Artificial Intelligence (AI) to find the solution path from the initial state to the goal state by exploring the various states. 
+•	The state space search approach searches through all possible states of a problem to find a solution.
+•	A way to mathematically represent a problem by defining all the possible states in which the problem can be. 
+•	This is used in search algorithms to represent the initial state, goal state, and current state of the problem. 
+•	Each state in the state space is represented using a set of variables.{States.possible Action,Result,Cost}
+•	The efficiency of the search algorithm greatly depends on the size of the state space,
+
+1.2	Features 
+•	Exhaustiveness:State space search explores all possible states of a problem to find a solution.
+•	Precise: It give precise information about all the states so that machine is able to analyze it properly 
+•	Completeness:If a solution exists, state space search will find it.
+•	Optimality:Searching through a state space results in an optimal solution.
+1.3	Example: 8 puzzle problem
+The 8-Puzzle is a sliding puzzle that consists of a 3x3 grid with eight numbered tiles and one blank space. The goal is to rearrange the tiles from an arbitrary initial state to a goal state by sliding tiles into the blank space.
+1.	State Representation:
+The state is represented by the arrangement of the tiles on the board. For example:
+Initial State:      Goal State:
+1 2 3               1 2 3
+4 5 6               8    4
+7 8                  7 6 5 
+2.	Operators/Actions:
+Possible actions include moving a tile adjacent to the blank space into the blank space.example Upward,downward right left	
+3.	Goal State:
+The goal state is a predefined stae and check each state that it ias a goal state or not
+4.	Cost: the amount of time/space/cost required to move from one state to another
+
+1.4	Types of Space state search
+Uninformed: Also called as blind search don’t have additional information about the problem domain. It just have goal and initial state 
+Informed Search: uses additional information, such as heuristics, to guide the search process.
+Breadth First Search 
+•	It comes under uninformed search technique in which We don’t have the domain specific knowledge about the domain problem like what is the cost in reaching the goal state
+•	Optimal: Here optimal means shortest value given to reach the goal state if value is constant or not it always provide optimal or shortest path to reach at goal state 
+•	Complete: it always provides a solution to the propblem 
+•	Shallow node:unlike dfs it travels through level by level which is very important as reaches to every shallowest (neighbour) node so if there is a node at a level it first not traverse deeper 
+•	FIFO : Queue 
+•	Example:
+
+
+Disadvantages:
+•	It requires lots of memory since each level of the tree must be saved into memory to expand the next level.
+•	BFS needs lots of time if the solution is far away from the root node.
+•	Complexity : O(bd). b branches D is depth
+Depth First Search
+• Complexity : O(bd). b branches D is depth
+Best First Search 
+ 
+
+•	Informed Search technique
+•	Provides good solution not optimal solution 
+•	Provides normal complexity but in worst case O(bd)
+•	What happens in best first search is we start from A to the goal g and we will check for each value the cost of reaching up to the goal then we will check from the starting node A there are three nodes B C and D to move now we will check from B to G what is the cost from C to G what is the cost and from D to G what is the cost then we will take the least value of reaching to the node goal then now we have seen C has the least value that is 25 then we will not approach to B and D and we will not check on B and D this is called as informed or heuristic method so we will go through C and now from we will check from C there are three nodes E F and A but we will cancel that A because it is already been taken so we will put them in a closed then we will check from E to F and now we will take the least value from E to F so F has the least value then we will check from F to G and then this is on now we have reached from F2 as goal so this is how we have get our best first search
+Hill climbing search 
+•	Local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
+•	No backtracking 
+•	doesn’t have knowledge of global domain they have knowledge of local  domain  also called greedy local search as it only looks to its good immediate neighbor state and not beyond that.
+•	Hill Climbing is mostly used when a good heuristic is available.
+•	we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
+•	Examples of Hill climbing algorithm is Traveling-salesman Problem in which we need to minimize the distance traveled by the salesman.
+•	Problems
+•	Local Maximum: A local maximum is a peak state in the landscape which is better than each of its neighboring states, but there is another state also present which is higher than the local maximum.
+ Solution: Backtracking ,the algorithm can backtrack the search space and explore other paths by creating alist of available paths as well.
+•	Plateau is the flat area of the search space in which all the neighbor states of the current state contains the same value, because of this algorithm does not find any best direction to move. A hill-climbing search might be lost in the plateau area.
+Solution: Randomly select a state which is far away from the current state so it is possible that the algorithm could find non-plateau region.
+
+
+
+
+•	Ridge is a special form of the local maximum. an area which is higher than its surrounding areas and here direction can’t be changed so if it is moving in A direction and gets the maximum and there exist B also but higher in different direction it will not be able to find the value 
+Solution : Moving in diferent direction is the only solution
+
+
+A* search Technique
+•	Informed Search Technique
+•	A* search is the most commonly known form of best-first search. 
+•	It uses heuristic function h(n), and cost to reach the node n from the start state g(n).
+•	A* search algorithm finds the shortest path through the search space using the heuristic function.
+•	This search algorithm expands less search tree and provides optimal result faster.
+•	In A* search algorithm, we use search heuristic as well as the cost to reach the node. Hence we can combine both costs as following, and this sum is called as a fitness number.
+•	A* search algorithm is optimal and complete.
+
+ 
+Initialization: {(S, 5)}
+Iteration1: {(S--> A, 4), (S-->G, 10)}
+Iteration2: {(SA--> C, 4), (SA-->B, 7)
+Iteration3: {(SAC--->G, 6), (SAC--->D, 11), 
+Iteration 4 will give the final result, as S--->A--->C--->G it provides the optimal path with cost 6.
+AO* Algorithm
+•	Gatesmasher ao* algo
+•	Performs Best-first search. 
+•	divides any given difficult problem into a smaller group of problems that are then resolved using the AND-OR graph concept. 
+•	AND OR graphs are specialized graphs that are used in problems that can be divided into smaller problems. 
+•	The AND side of the graph represents a set of tasks that must be completed to achieve the main goal, 
+•	hile the OR side of the graph represents different methods for accomplishing the same main goal.
+
+Example
+
+
+
+Means End Analysis
+•	mixture of the two directions is appropriate for solving a complex and large problem. Such a mixed strategy, make it possible that first to solve the major part of a problem and then go back and solve the small problems arise during combining the big parts of the problem. Such a technique is called Means-Ends Analysis.
+•	Means-Ends Analysis is problem-solving techniques used in Artificial intelligence for limiting search in AI programs.
+•	It is a mixture of Backward and forward search technique.
+•	The MEA analysis process centered on the evaluation of the difference between the current state and goal state.
+How means-ends analysis Works:The means-ends analysis process can be applied recursively for a problem
+1.	Evaluate the difference between Initial State and final State.
+2.	Select the various operators which can be applied for each difference.
+3.	Apply the operator at each difference, which reduces the difference between the current state and goal state.
+
+Constraint Satisfaction Problem 
+Basically what happens
+1.	There are three variables or components in CSP  =>V,D,C (define in below image)
+2.	C is a constraint that are applied on V
+3.	So example is also given in an image in which 
+4.	Constraint V1 and V2 should not be qual 
+5.	Domain can be for v1->1,2 || V2 ->2,4
+6.	Variable is v1 and v2
+7.	So problem is we have to satisfy  states or problem in given range and constraint
+
+Unit-2
+Forward Reasoning:
+•	It involves starting with available information (facts or premises) and moving forward to draw conclusions or make predictions. 
+•	Goal -oriented approach where the system uses existing knowledge to derive new knowledge or reach a specific goal.
+•	Knowledge Base:
+o	Forward reasoning relies on a knowledge base that contains a set of facts, rules, and relationships about the problem 
+o	The knowledge base serves as the foundation for drawing conclusions.
+•	Initial Facts:
+o	The process begins with an initial set of known facts.
+o	These facts can be directly observed or obtained from external sources.
+•	Inference 
+o	The inference engine is responsible for applying the rules and logical operations defined in the knowledge base to draw new conclusions.
+•	Goal or Objective:
+o	Forward reasoning often has a specific goal or objective. The system aims to derive new information that contributes to achieving the desired outcome.
+Advantages 
+•	Transparency: The reasoning process is transparent and easy to understand.
+•	Efficiency: It can be computationally efficient, especially when the goal is well-defined.
+•	Goal-Oriented: Well-suited where the objective is to reach a specific goal.
+Limitations 
+•	May Miss Alternatives: It may not explore alternative paths or consider other possibilities not covered by existing rules.
+•	Dependency on Knowledge Base: The effectiveness depends on the completeness and accuracy of the knowledge base.
+Backward Reasoning
+•	System starts with a goal and works backward to determine what facts or conditions are needed to achieve that goal. 
+•	Problem-solving approach that begins with the end objective and systematically reasons backward to identify the steps or conditions necessary to reach that objective.
+•	Goal or Objective:
+o	Backward reasoning begins with a specific goal or desired outcome that the system aims to achieve.
+•	Knowledge Base:
+o	The knowledge base contains a set of rules, facts, and relationships that describe the domain or problem space.
+o	It serves as the foundation for determining the conditions required to achieve the goal.
+•	Inference Engine:
+o	The inference engine is responsible for applying rules and logical operations in reverse order, starting from the goal and working backward to the initial conditions.
+•	Working Memory:
+o	The system maintains a working memory that stores the current state of knowledge and the conditions being considered.
+Advantages 
+•	Goal-Oriented: Well-suited for tasks where the objective is to achieve a specific goal.
+•	Efficient for Goal Achievement: Can be efficient when the goal is clearly defined, and the system needs to work backward to find the required conditions.
+Limitations 
+•	May Miss Alternative Paths: It may not explore alternative paths or consider other possibilities not covered by existing rules.
+•	Dependency on Knowledge Base: The effectiveness depends on the completeness and accuracy of the knowledge base.
+
+Monotonic Reasoning:
+•	Form of reasoning where the addition of new information never causes previously drawn conclusions to be revised or invalidated. 
+•	It follows a "more information is always better" principle.
+•	Certainty and Stability: Conclusions reached through monotonic reasoning are considered stable and certain.
+•	Inference Process: The inference process is straightforward and based on the available information at any given time.
+•	Example:
+o	"All humans are mortal" and "John is a human," then it can be concluded that "John is mortal." If later it is discovered that John is also a professor, this new information doesn't affect the previous conclusion.
+Non-monotonic Reasoning:
+•	Form of reasoning where the addition of new information may lead to the revision or abandonment of previously made conclusions. 
+•	It allows for reasoning under uncertainty and the possibility of changing beliefs.
+•	Reevaluation of Conclusions: New information may cause a reevaluation of previously drawn conclusions. Conclusions are not necessarily fixed.
+•	Handling Uncertainty: Non-monotonic reasoning is particularly useful in handling situations where information is incomplete or uncertain.
+•	Default Assumptions: It often involves default assumptions or rules that can be overridden by new information.
+•	Example:
+o	 "Birds can fly." Based on this, one might initially conclude that "Robins can fly." However, if later information is provided that "This specific robin is a mechanical toy," the previous conclusion may be revised because the default assumption about birds flying does not apply to mechanical toys.
+Reasoning with uncertainties
+Form of reasoning that deals with incomplete, imprecise, or uncertain information. 
+•	Uncertainty Types:
+o	Arises due to incomplete knowledge or information.
+o	Arises due to inherent randomness or variability in a system.
+•	Fuzzy Logic:
+o	Fuzzy logic allows for the representation of degrees of truth or membership in a set.
+o	It is used when information is imprecise and boundaries between categories are not well-defined.
+
+
 1.1  What is Machine Learning
 	Machine learning (ML) is a subdomain of artificial intelligence (AI) that focuses on developing systems that learn—or improve performance—based on the data they ingest. 
 	Machine learning is a field of technology  that allows machine the ability  to learn and improve their performance on a specific task without being explicitly programmed
