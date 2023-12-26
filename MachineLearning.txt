@@ -528,7 +528,191 @@ o	F1-Score= 2⋅Precision⋅Recall/ Precision+Recall
 •	variance tells that how much a random variable is different from its expected value
 •	Low variance means there is a small variation in the prediction of the target function with changes in the training data set.
 •	 High variance shows a large variation in the prediction of the target function with changes in the training dataset.
-•	A model that shows high variance learns a lot and perform well with the training dataset, and does not generalize well with the unseen dataset. As a result, such a model gives good results with the training dataset but shows high error rates on the test dataset.
+•	A model that shows high variance learns a lot and perform well with the training dataset, and does not generalize well with the unseen dataset. As a result, such a model gives good results with the training 
+	dataset but shows high error rates on the test dataset.
+
+
+	UNIT -4
+What is Dimensionality Reduction?
+•	The number of input features, variables, or columns present in a given dataset is known as dimensionality, and the process to reduce these features is called dimensionality reduction.
+•	it is very difficult to visualize or make predictions for the training dataset with a high number of features, for such cases, dimensionality reduction techniques are required to use.
+•	It is a way of converting the higher dimensions dataset into lesser dimensions dataset ensuring that it provides similar information." Used for a better fit predictive model while solving the classification and regression problems.
+•	Ex:speech recognition, signal processing, bioinformatics data visualization, noise reduction
+Dimensionality Reduction Technique
+The Curse of Dimensionality
+Handling the high-dimensional data is very difficult in practice As the number of features increases, the number of samples also gets increased proportionally, and the chance of overfitting also increases. This leads to model inefficiency called as curse of dimensionality
+Advantages
+•	By reducing the dimensions of the features, the space required to store the dataset also gets reduced.
+•	Less Computation training time is required for reduced dimensions of features.
+•	Reduced dimensions of features of the dataset help in visualizing the data quickly.
+•	It removes the redundant features (if present) by taking care of multicollinearity.
+Disadvantages 
+•	Some data may be lost due to dimensionality reduction.
+•	In the PCA dimensionality reduction technique, sometimes the principal components required to consider are unknown.
+Approaches of Dimension Reduction
+
+Principal Component Analysis
+•	Principal Component Analysis is an unsupervised learning algorithm that is used for the dimensionality reduction
+•	Due to overfitting model gets trained on each and every point which is not effective model so pca comes in pca tries to reduce the dimensions or attributes 
+•	The number of these PCs are either equal to or less than the original features present in the dataset. If there are 4 attributes then there can be only less that or equal to 4 attributes in pca so PC1,PC2,PC3,PC4 can be created 
+•	Converts the observations of correlated features into a set of linearly uncorrelated features with the help of orthogonal transformation.
+•	All these PCs should be orthoganl means independent of each other
+•	PCA generally tries to find the lower-dimensional surface to project the high-dimensional data.
+•	Example: image processing, movie recommendation system,
+Important Terms
+o	Dimensionality: It is the number of features or variables present in the given dataset. More easily, it is the number of columns present in the dataset.
+o	Correlation: It signifies that how strongly two variables are related to each other. Such as if one changes, the other variable also gets changed. The correlation value ranges from -1 to +1. Here, -1 occurs if variables are inversely proportional to each other, and +1 indicates that variables are directly proportional to each other.
+o	Orthogonal: It defines that variables are not correlated to each other, and hence the correlation between the pair of variables is zero.
+o	Eigenvectors: If there is a square matrix M, and a non-zero vector v is given. Then v will be eigenvector if Av is the scalar multiple of v.
+o	Covariance Matrix: A matrix containing the covariance between the pair of variables is called the Covariance Matrix.
+•	The principal component must be the linear combination of the original features.
+•	These components are orthogonal, i.e., the correlation between a pair of variables is zero.
+•	The importance of each component decreases when going to 1 to n, it means the 1 PC has the most importance, and n PC will have the least importance.
+
+
+Ensemble Learning
+•	Ensemble learning helps improve machine learning results by combining several models
+•	Here L1,l2,l3,l4 are several different models working on differente algo like random forest svm decision tree etc these are called base learners or weak  classifiers and L* called as strong classifier 
+•	It is based on decision of multimple models that’s why its accuracy is greater than all base learners 
+
+
+
+Bagging
+•	It describes the way How strong classifier generates its output 
+•	Firstly it used Random samples of dataset for each model so if there are 100 records so 15 records to l1 20 records to L2 and that can be in random orders of record and also with replacement means record1 can be in record2 also or record3 laso 
+•	Secondly after modelling on the basis of diff algo models are created then strong classifier need to decide which is the correct output as every model has their own output and can be dfferent 
+•	So here strong classifier uses voting mechanism and generates output ex if out of 10, 6 says yes then output is yes 
+Boosting
+•	In boosting with all the records they have their corresponding weights which are used to decide to be selected in the dataset 
+•	Secondly it uses step by step procedure or sequential flow of training models
+•	So initially every record has same weight means every record has equal probabilty to get selected in the dataset(so this dataset contains only few records not all) so it gives training data and after training it gives all the data to test where as it is is a weak classifier it gives some of the output wrong
+•	Those values which model1 has predicted wrong increase their weight so that they can be selcted in model2 training again process is repeated who have wrong output ,their weights are increased and train to third model this is done n times 
+•	after that on the basis of voting strong classifier choose the output which have highest vote 
+Neural network :
+o	It is a branch of artificial intelligence which is inspired by human brains 
+o	It consist of interconnected nodes called as neurons used for communication
+o	It consist of a layered structure just like human brain
+o	The idea behind the neural network was to learn from its mistake 
+o	It creates an adaptive system that computers use to learn from their mistakes and improve continuously. 
+o	Thus, artificial neural networks attempt to solve complicated problems, like summarizing documents or recognizing faces, with greater accuracy.
+
+ANN
+•	Mechanism for information processing that draws inspiration from the brain is called an artificial neural network (ANN). ANNs learn via imitation just like people do. 
+•	ANN is tailored for a particular purpose, including such pattern classification or data classification
+Components 
+Input Layer
+•	The data will be accepted by this layer and forwarded to the remainder of the network. 
+•	This layer allows feature input. It feeds the network with data from the outside world; 
+•	nodes simply transmit the information (features) to the hidden units.
+
+Hidden Layer
+•	The nodes in this layer are not visible to the outside world. 
+•	Any features entered through to the input layer are processed by the hidden layer in any way, with the results being sent to the output layer. 
+•	Also called as concealed layer 
+•	either there are one or many hidden layers.
+•	Hidden layers are what give neural networks their exceptional performance and intricacy. 
+•	They carry out several tasks concurrently, including data transformation and automatic feature generation.
+
+Output Layer
+•	This layer raises the knowledge that the network has acquired to the outside world. 
+•	The output layer is the final layer 
+•	The output layer contains the answer to the issue. 
+•	We receive output from the output layer after passing raw photos to the input layer.
+
+Activation Function
+•	Multiple outputs are combined together and give to activation function and it generates the output so it is reponsible for generating output 
+•	It  is one that outputs a smaller value for tiny inputs and a higher value if its inputs are greater than a threshold. 
+•	It "fires" if the inputs are big enough; otherwise, nothing happens. 
+•	It is a gate that verifies how an incoming value is higher than a threshold value.
+•	they introduce non-linearities in neural networks and enable the neural networks can learn powerful operations, activation functions are helpful. 
+•	A feedforward neural network might be refactored into a straightforward linear function or matrix transformation on to its input if indeed the activation functions were taken out.
+•	Explanation: As we are aware, neurons in neural networks operate in accordance with weight, bias, and their corresponding activation functions. Based on the mistake, the values of the neurons inside a neural network would be modified. This process is known as back-propagation. Back-propagation is made possible by activation functions since they provide the gradients and error required to change the biases and weights.
+
+•	Types of neural network: 4 types
+o	Feedforward Neural Networks (FNN): Feedforward neural networks process data in one direction, from the input node to the output node. Every node in one layer is connected to every node in the next layer. A feedforward network uses a feedback process to improve predictions over time.
+o	Convolutional Neural Networks (CNN): A neural network that is designed to process input data that has a grid-like structure, such as an image. It uses convolutional layers and to extract features from the input data.
+o	Recurrent Neural Networks (RNN): A neural network that can operate on input sequences of variable length, such as text. It uses weights to make structured predictions.
+o	Long Short-Term Memory (LSTM) : Specialized RNN architectures designed to address the vanishing gradient problem .It uses memory cells and gates to selectively read, write, and erase information.
+Feed Forward 
+•	Also known as a multilayer perceptron (MLP), is a type of artificial neural network where the information moves in only one direction—forward—from the input layer, through the hidden layers and finally to the output layer. 
+•	The term "feedforward" signifies the flow of data through the network without any feedback loops.
+•	Feedforward Neural Networks provide a foundation for more complex neural network architectures
+•	Neurons and Connections:
+o	Each neuron in a layer is connected to every neuron in the next layer.
+o	Neurons in a layer do not have connections with neurons in the same layer or in previous layers.
+•	Activation Functions:
+o	Each neuron typically has an activation function that determines its output based on the weighted sum of its inputs.
+•	Training:
+o	Feedforward Neural Networks are trained using supervised learning. The weights and biases of the neurons are adjusted during training to minimize the difference between the predicted output and the actual output.
+o	Backpropagation is a common algorithm used for training feedforward neural networks.
+
+
+
+Back Propogation Algorithm 
+•	It is a supervised learning algorithm commonly used for training artificial neural networks, including feedforward neural networks. 
+•	The goal of backpropagation is to minimize the error between the predicted output of the neural network and the actual target output by adjusting the weights and biases of the network.
+step-by-step overview
+•	Initialization:
+o	Initialize the weights and biases of the neural network randomly. These weights and biases determine how much each input contributes to the neuron's output.
+•	Forward Pass:
+o	Perform a forward pass to calculate the predicted output. This involves applying the weighted sum of inputs and the activation function for each neuron in each layer, progressing from the input layer to the output layer.
+•	Compute Loss:
+o	Calculate the loss, which represents the difference between the predicted output and the actual target output. 
+•	Backward Pass (Backpropagation)
+o	Compute the gradient which involves calculating how much the loss would change with a small change in each weight and bias.
+o	Update the weights and biases in the opposite direction of the gradient to minimize the loss. This step involves adjusting the parameters using a learning rate, which determines the size of the update.
+•	Repeat:
+o	Repeat the forward pass, loss computation, and backward pass steps for multiple iterations 
+Recommendation System
+•	It is an application of (AI) that provides personalized suggestions or recommendations to users. 
+•	These systems are widely used in various online platforms to help users discover new products, services, or content that align with their preferences.
+•	rely on user data, including explicit feedback (ratings, reviews) and implicit feedback (clicks, views), to learn user preferences.
+•	It identify patterns and similarities among users or items to make recommendations. This can be user-based or item-based.
+•	It recommends items similar to those the user has liked or interacted with, based on the features or content of the items.
+•	Deep learning models, including neural networks, are increasingly used for recommendation systems to capture complex patterns and representations.
+Types:
+•	Collaborative Filtering:
+o	User-Based Collaborative Filtering: Recommends items based on the preferences of users with similar tastes.
+o	Item-Based Collaborative Filtering: Recommends items similar to those the user has liked or interacted with.
+•	Content-Based Filtering:
+o	Recommends items based on the features or content of the items and the user's preferences.
+
+
+Content Based Recommendation
+•	Item Representation: Items are represented by a set of features. These features could be keywords, tags, or other descriptors that characterize the content.
+•	User Profile: The system builds a user profile based on the features of items the user has interacted with in the past. This profile represents the user's preferences.
+•	Similarity Calculation: Similarity measures (e.g., cosine similarity) are used to determine the likeness between the user profile and the features of other items in the system.
+•	Recommendation: Items with high similarity scores to the user profile are recommended to the user.
+Example: Movie Recommendation System:
+•	Item Representation:Each movie is represented by features such as genre, director, actors, and keywords 
+•	User Profile:The user profile is constructed based on movies the user has rated or liked. For example, if a user enjoys action movies with specific actors, those preferences become part of their profile.
+•	Similarity Calculation:Similarity is calculated based on the overlap of features between the user profile and other movies. 
+•	Recommendation:Movies with high cosine similarity to the user profile are recommended. If the user likes action movies with certain actors, the system might recommend other action movies featuring those actors.
+Limitations of recommendation systems:
+•	Cold Start Problem:
+o	Definition: It refers to the difficulty in making accurate recommendations for new users or items that have limited or no interaction history.
+o	Challenge: Without sufficient data, the system may struggle to understand the preferences of new users or to recommend new items accurately.
+•	Data Sparsity:
+o	Definition: Many recommendation systems rely on user-item interaction data. In many cases, this data can be sparse, meaning that users may not interact with a large portion of available items.
+o	Challenge: Sparse data can lead to challenges in accurately capturing user preferences and finding meaningful patterns.
+•	Popularity Bias:
+o	Definition: Popular items tend to be recommended more frequently, leading to a bias toward already popular or mainstream items.
+o	Challenge: Less popular or niche items may not receive enough exposure, hindering diversity in recommendations.
+•	Limited Serendipity:
+o	Definition: Recommendation systems often focus on providing users with items similar to what they have already interacted with, reducing the element of surprise or serendipity.
+o	Challenge: Users may miss out on discovering new and diverse content that does not align with their existing preferences.
+•	Profile Drift:
+o	Definition: User preferences can change over time, but some recommendation systems may not adapt quickly to these changes, leading to a form of profile drift.
+o	Challenge: Stale recommendations that do not reflect the user's current interests may result in a decline in user satisfaction.
+•	Privacy Concerns:
+o	Definition: Recommendation systems often require access to user data to make personalized suggestions, raising privacy concerns.
+o	Challenge: Balancing personalization with user privacy is crucial, and users may be hesitant to share sensitive information.
+•	Cross-Domain Challenges:
+o	Definition: Extending recommendations across different domains (e.g., from movies to books) can be challenging due to the distinct nature of each domain.
+o	Challenge: Models trained on one domain may not generalize well to others, limiting the effectiveness of cross-domain recommendations.
+
+
+
 
 	
                                       
